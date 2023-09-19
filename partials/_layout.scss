@@ -1,0 +1,281 @@
+.container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 .7rem;
+}
+
+.bg-home {
+    position: relative;
+}
+
+.bg-home::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url("../assets/bg.svg");
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-position: 50% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+.hero {
+    color: $white-normal;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: .875rem;
+
+    h1 {
+        text-align: center;
+        line-height: 150%;
+        max-width: 58.75rem;
+        font-size: 2.4rem;
+    }
+
+    p {
+        text-align: center;
+        margin: .875rem 0;
+    }
+}
+
+.button-contact {
+    padding: .875rem 1.75rem;
+    color: $white-normal;
+    background-color: $red-normal;
+    border: 0;
+    font-size: 1.12rem;
+    font-weight: 600;
+    margin: .875rem 0;
+}
+
+.button-contact:hover {
+    animation: scaleButton 0.6s alternate infinite;
+}
+
+@keyframes scaleButton {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.07);
+    }
+}
+
+@media screen and (max-width: 48rem) {
+    .hero {
+        min-height: 60vh;
+
+        h1 {
+            font-size: 2.12rem;
+            padding: 0 0.875rem;
+            width: 100%;
+        }
+
+        p {
+            font-size: .875rem;
+        }
+    }
+}
+
+@media screen and (max-width: 30rem) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: .75rem;
+    }
+}
+
+.about {
+    background-color: $primary-normal;
+    overflow: hidden;
+    color: $white-normal;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .875rem;
+    padding: 2.12rem 0.875rem 4rem 0.875rem;
+
+    img {
+        max-width: 35.6rem;
+    }
+}
+
+.about-content div {
+    flex: 1;
+}
+
+.about-description {
+    h2 {
+        font-size: 2.3rem;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin-bottom: .875rem;
+        line-height: 150%;
+    }
+}
+
+@media screen and (max-width: 48rem) {
+    .about-content {
+        flex-direction: column;
+    }
+}
+
+.services {
+    background-color: $white-normal;
+    color: $black-normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.3rem .875rem;
+}
+
+.services-content h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.12rem;
+    margin-bottom: .875rem;
+}
+
+.services-content p {
+    line-height: 150%;
+    margin-bottom: .875rem;
+    text-align: center;
+    max-width: 48.7rem;
+}
+
+.haircuts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2.75rem 2.12rem 2.75rem;
+}
+
+.haircut {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: $white-normal;
+    border-radius: .5rem;
+    box-shadow: 0 -1px 17px -4px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        max-width: 22.1rem;
+        transition: transform 0.2s;
+    }
+}
+
+.haircut img:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+.haircut-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .875rem;
+    background-color: $white-normal;
+    z-index: 2;
+}
+
+.haircut-info button {
+    color: $white-normal;
+    background-color: $red-normal;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border: 0;
+    cursor: default;
+}
+
+@media screen and (max-width: 48rem) {
+    .haircuts {
+        flex-direction: column;
+    }
+
+    .haircut {
+        img {
+            max-width: 18rem;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.3rem 0;
+    gap: 1.5rem;
+    color: $white-normal;
+}
+
+.footer-icons {
+    display: flex;
+    gap: .5rem;
+    color: $white-normal;
+}
+
+.btn-whatsapp {
+    position: fixed;
+    bottom: .875rem;
+    right: 1.5rem;
+    z-index: 99;
+
+    img {
+        max-width: 4rem;
+        transition: transform 0.4s;
+    }
+
+    img:hover{
+        transform: scale(1.1);
+    }
+}
+
+.btn-whatsapp .tooltip-text{
+    visibility: hidden;
+    position: absolute;
+    width: 7.5rem;
+    top: 0.5rem;
+    left: -9rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: $black-normal;
+    color: $white-normal;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.btn-whatsapp:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+@media screen and (max-width: 48rem) {
+    .btn-whatsapp {
+        img {
+            max-width: 3.5rem;
+        }
+    }
+}
